@@ -15,11 +15,11 @@ except IOError as err:
 
 setup(
     name='django-river',
-    version='0.9.0',
+    version='2.1.0',
     author='Ahmet DAL',
     author_email='ceahmetdal@gmail.com',
     packages=find_packages(),
-    url='https://github.com/javrasya/django-river.git',
+    url='https://github.com/joechlanda/django-river.git',
     description='Django Workflow Library',
     long_description=long_description,
     install_requires=[

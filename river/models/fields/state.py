@@ -146,7 +146,10 @@ def _post_save(sender, instance, created, *args, **kwargs):  # signal, sender, i
 
     if created:
         ObjectService.register_object(instance)
-    if not instance.get_state():
-        init_state = StateService.get_initial_state(ContentType.objects.get_for_model(instance))
-        instance.set_state(init_state)
-        instance.save()
+    try:
+        if not instance.get_state():
+            init_state = StateService.get_initial_state(ContentType.objects.get_for_model(instance))
+            instance.set_state(init_state)
+            instance.save()
+    except:
+        pass
